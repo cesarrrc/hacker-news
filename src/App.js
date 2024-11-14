@@ -77,7 +77,7 @@ function App() {
       const numericFilter = `created_at_i>${dateParam},created_at_i<${dateParam2}`;
 
       const data = await fetchCustomDateRange(
-        `http://hn.algolia.com/api/v1/${params.searchBy}?query=${params.search}&tags=${tag}&page=${params.page}&numericFilters=${numericFilter}`
+        `https://hn.algolia.com/api/v1/${params.searchBy}?query=${params.search}&tags=${tag}&page=${params.page}&numericFilters=${numericFilter}`
       );
       setList(data.hits);
       const paginationList = paginationHelper(data.page, data.nbPages);
@@ -127,11 +127,11 @@ function App() {
       const dateParam = Math.floor(modifyDateParam(params.time) / 1000);
       const numericFilter = `created_at_i>${dateParam}`;
       fetchData(
-        `http://hn.algolia.com/api/v1/${params.searchBy}?query=${params.search}&tags=${tag}&page=${params.page}&numericFilters=${numericFilter}`
+        `https://hn.algolia.com/api/v1/${params.searchBy}?query=${params.search}&tags=${tag}&page=${params.page}&numericFilters=${numericFilter}`
       );
     } else {
       fetchData(
-        `http://hn.algolia.com/api/v1/${params.searchBy}?query=${params.search}&tags=${tag}&page=${params.page}`
+        `https://hn.algolia.com/api/v1/${params.searchBy}?query=${params.search}&tags=${tag}&page=${params.page}`
       );
     }
   }, [params, customRangeHandler, datePlaceHolder, searchDate]);
