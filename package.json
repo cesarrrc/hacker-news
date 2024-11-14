@@ -1,7 +1,7 @@
 {
   "name": "hacker-news",
   "version": "0.1.0",
-  "homepage": "https://cesarrrc.github.io/<Repository-name>",
+  "homepage": "https://cesarrrc.github.io/hacker-news",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
