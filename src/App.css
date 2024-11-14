@@ -1,0 +1,249 @@
+html {
+  height: 100vh;
+}
+
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: orange;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* header classes */
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo {
+  font-size: 32px;
+  color: white;
+  border: 2px solid white;
+  width: 40px;
+  height: 36px;
+  margin: 10px;
+  padding-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* vertical-align:top; */
+}
+
+.logo-container h2 {
+  text-align: left;
+  margin: 0;
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.search-icon {
+  height: 100%;
+  background-color: white;
+  color: orange;
+  font-size: 36px;
+  padding: 0 14px;
+}
+
+.search-bar {
+  display: flex;
+  flex: 4;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  word-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  font-weight: light;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.settings {
+  display: flex;
+  flex: 0.25;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-icon {
+  font-size: 36px;
+}
+
+/* SearchParams Component classes */
+
+.search-params-parent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-params-container {
+  margin-bottom: 10px;
+  display: flex;
+  margin-top: 14px;
+  margin-left: 20px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.search-params-container label {
+  font-size: 20px;
+}
+
+.search-params-container label select {
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 4px;
+}
+
+/* Calendar Date Range Picker Classes inside of SearchParams Component */
+
+.calendar-container-parent {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.calendar-container {
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+}
+
+.calendar {
+  width: 100%;
+}
+
+.rdrMonth,
+.rdrMonthAndYearWrapper {
+  width: 60% !important;
+  margin: auto;
+}
+
+.rdrDay {
+  height: 50px !important;
+}
+
+.calendar-button-container {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.calendar .rdrDayToday .rdrDayNumber span:after {
+  background-color: orange; /* Change color here */
+}
+
+/* List Component classes */
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: left;
+  margin: 0 20px;
+}
+
+.list-item {
+  margin-bottom: 10px;
+}
+
+.title-container {
+  font-size: 20px;
+}
+
+.title-container h3 {
+  width: auto;
+  display: inline;
+  margin-right: 8px;
+}
+
+.story-link {
+  word-break: break-all;
+  font-size: 16px;
+  color: gray;
+  font-size: 20px;
+}
+
+.meta {
+  font-weight: 200;
+  margin-bottom: 6px;
+  margin-top: 4px;
+  font-size: 16px;
+  color: gray;
+}
+
+.meta a {
+  color: gray;
+}
+
+.story-text {
+  margin: 0 20px;
+  font-weight: 600;
+}
+
+/* Pagination Component Classes */
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.page-item {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid black;
+  width: 40px;
+  height: 38px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  color: gray;
+  border: gray 2px solid;
+  box-shadow: 1px 1px 1px;
+}
+.page-item:active {
+  box-shadow: 0 0 0;
+}
+
+.selected {
+  color: orange;
+  border: orange 2px solid;
+}
