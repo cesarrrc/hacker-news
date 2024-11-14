@@ -6,11 +6,15 @@ const Header = ({ params, changeParams }) => {
   return (
     <header>
       <div className="logo-container">
-        <div className="logo">H</div>
-        <h2>
-          Search <br />
-          Hacker News
-        </h2>
+        <a href="https://news.ycombinator.com/">
+          <div className="logo">H</div>
+        </a>
+        <a href="/">
+          <h2>
+            Search <br />
+            Hacker News
+          </h2>
+        </a>
       </div>
       <div className="search-bar" htmlFor="search">
         <label htmlFor="search">
@@ -25,9 +29,9 @@ const Header = ({ params, changeParams }) => {
           placeholder="Search stories by title, url or author"
         />
       </div>
-      <div className="settings">
+      <a className="settings" href="https://hn.algolia.com/settings">
         <CiSettings className="settings-icon" />
-      </div>
+      </a>
     </header>
   );
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { formatDistanceToNow } from "date-fns";
+import Pagination from "./Pagination";
 
-const List = ({ list }) => {
+const List = ({ list, pagination, handleNextPage, currentPage }) => {
   return (
     <div className="list-container">
       {list.map((item, i) =>
@@ -79,6 +80,11 @@ const List = ({ list }) => {
           </div>
         )
       )}
+      <Pagination
+        pagination={pagination}
+        handleNextPage={handleNextPage}
+        currentPage={currentPage}
+      />
     </div>
   );
 };

@@ -1,10 +1,12 @@
-html {
-  height: 100vh;
+html,
+body {
+  height: 100%;
 }
 
 .App {
   text-align: center;
-  height: 100vh;
+  height: 100%;
+  background-color: rgb(35, 33, 33);
 }
 
 a {
@@ -16,53 +18,59 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: orange;
+  height: 50px;
 }
 
 main {
   display: flex;
   flex-direction: column;
   height: 100%;
-  align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
 }
 
 /* header classes */
-
 .logo-container {
   display: flex;
   align-items: center;
-  flex: 1;
-  min-width: 200px;
+  min-width: 170px;
 }
 
 .logo {
-  font-size: 32px;
+  font-size: 28px;
   color: white;
   border: 2px solid white;
-  width: 40px;
-  height: 36px;
+  width: 32px;
+  height: 26px;
   margin: 10px;
   padding-bottom: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* vertical-align:top; */
 }
 
 .logo-container h2 {
   text-align: left;
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 18px;
   font-weight: 400;
+}
+
+@media (max-width: 650px) {
+  .logo-container h2 {
+    display: none;
+  }
+  .logo-container {
+    min-width: 40px;
+  }
 }
 
 .search-icon {
   height: 100%;
   background-color: white;
   color: orange;
-  font-size: 36px;
+  font-size: 30px;
   padding: 0 14px;
 }
 
@@ -70,13 +78,13 @@ main {
   display: flex;
   flex: 4;
   width: 100%;
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
 .search-bar input {
   width: 100%;
   border: none;
-  font-size: 24px;
+  font-size: 18px;
   word-spacing: 0.5px;
   letter-spacing: 0.5px;
   font-weight: light;
@@ -88,10 +96,10 @@ main {
 
 .settings {
   display: flex;
-  flex: 0.25;
-  width: 100%;
+  min-width: 40px;
   justify-content: center;
   align-items: center;
+  margin: 0 8px;
 }
 
 .settings-icon {
@@ -99,12 +107,12 @@ main {
 }
 
 /* SearchParams Component classes */
-
 .search-params-parent {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: rgb(255, 255, 240);
 }
 
 .search-params-container {
@@ -116,14 +124,27 @@ main {
   margin-bottom: 10px;
 }
 
+@media (max-width: 650px) {
+  .search-params-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin-bottom: 10px; */
+    /* margin-top: 14px; */
+    /* margin-left: 20px; */
+    /* gap: 10px; */
+    /* margin-bottom: 10px; */
+  }
+}
+
 .search-params-container label {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .search-params-container label select {
-  font-size: 20px;
-  margin-left: 10px;
-  padding: 4px;
+  font-size: 14px;
+  margin-left: 6px;
+  padding: 2px;
 }
 
 /* Calendar Date Range Picker Classes inside of SearchParams Component */
@@ -161,6 +182,19 @@ main {
   display: flex;
   gap: 14px;
   margin-bottom: 10px;
+  justify-content: center;
+}
+
+.calendar-button-container button {
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: solid gray 1px;
+  box-shadow: 1px 1px 2px;
+  color: gray;
+}
+.calendar-button-container button:focus {
+  box-shadow: none;
 }
 
 .calendar .rdrDayToday .rdrDayNumber span:after {
@@ -174,7 +208,8 @@ main {
   flex-direction: column;
   flex: 1;
   text-align: left;
-  margin: 0 20px;
+  padding: 0 20px;
+  background-color: rgb(255, 255, 240);
 }
 
 .list-item {
@@ -182,7 +217,7 @@ main {
 }
 
 .title-container {
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .title-container h3 {
@@ -193,16 +228,15 @@ main {
 
 .story-link {
   word-break: break-all;
-  font-size: 16px;
+  font-size: 12px;
   color: gray;
-  font-size: 20px;
 }
 
 .meta {
   font-weight: 200;
   margin-bottom: 6px;
   margin-top: 4px;
-  font-size: 16px;
+  font-size: 12px;
   color: gray;
 }
 
@@ -213,6 +247,10 @@ main {
 .story-text {
   margin: 0 20px;
   font-weight: 600;
+  font-size: 12px !important;
+}
+.story-text p {
+  font-size: 12px !important;
 }
 
 /* Pagination Component Classes */
@@ -221,23 +259,22 @@ main {
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 20px;
+  gap: 3px;
   list-style-type: none;
 }
 
 .page-item {
   cursor: pointer;
-  padding: 10px;
-  border: 1px solid black;
-  width: 40px;
-  height: 38px;
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  width: 24px;
+  height: 24px;
+  border: gray 1px solid;
   color: gray;
-  border: gray 2px solid;
+  font-size: 10px;
   box-shadow: 1px 1px 1px;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 240);
+  margin-bottom: 18px;
+  margin-top: 6px;
 }
 .page-item:active {
   box-shadow: 0 0 0;
@@ -246,4 +283,24 @@ main {
 .selected {
   color: orange;
   border: orange 2px solid;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 80px;
+}
+
+footer a {
+  color: white;
+  font-size: 12px;
+}
+footer span {
+  color: white;
+  font-size: 12px;
 }

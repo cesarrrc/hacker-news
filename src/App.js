@@ -12,6 +12,7 @@ import {
 } from "./utils";
 import { fetchCustomDateRange } from "./utils/api";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   // State
@@ -155,13 +156,14 @@ function App() {
         {params.tag === "author" && !list.length && (
           <div>Please Type any Authors Name in the Search Bar</div>
         )}
-        <List list={list} />
-        <Pagination
+        <List
           pagination={pagination}
           handleNextPage={handleNextPage}
           currentPage={params.page}
+          list={list}
         />
       </main>
+      <Footer />
     </div>
   );
 }

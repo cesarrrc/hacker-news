@@ -99,17 +99,17 @@ const SearchParams = ({
             <div className="calendar-button-container">
               <button
                 type="button"
-                onClick={() => customRangeHandler(dateSelection)}
-              >
-                Apply
-              </button>
-              <button
-                type="button"
                 name="time"
                 value="closed"
                 onClick={changeParams}
               >
                 Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => customRangeHandler(dateSelection)}
+              >
+                Apply
               </button>
             </div>
           </div>
