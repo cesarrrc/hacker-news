@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 import Header from "./components/Header";
 import List from "./components/List";
 import SearchParams from "./components/SearchParams";
-import Pagination from "./components/Pagination";
 import changeWidth from "./utils/change-select-width";
 import {
   dateHandler,
@@ -34,9 +33,10 @@ function App() {
     key: "selection",
   });
   const [datePlaceHolder, setDatePlaceHolder] = useState("");
-
+  const [loading, setLoading] = useState(true);
   // Update params onChange function
   const changeParams = (e) => {
+    setLoading(true);
     const { name, value } = e.target;
     if (name === "tag" && (value === "job" || value === "comment")) {
       return setParams({
@@ -61,6 +61,7 @@ function App() {
   // Function that handles a custom date range when applied
   const customRangeHandler = useCallback(
     async (dateSelection) => {
+      setLoading(true);
       if (!datePlaceHolder) {
         setParams({
           ...params,
@@ -92,6 +93,7 @@ function App() {
 
   // Function that helps change page of results when a page number is clicked in the pagination container
   const handleNextPage = (page) => {
+    setLoading(true);
     setParams({
       ...params,
       page: page,
@@ -110,6 +112,7 @@ function App() {
         totalPages: data.nbPages,
         listOfPages: paginationList,
       });
+      setLoading(false);
     };
 
     if (params.time === "closed" && datePlaceHolder) {
@@ -156,12 +159,18 @@ function App() {
         {params.tag === "author" && !list.length && (
           <div>Please Type any Authors Name in the Search Bar</div>
         )}
-        <List
-          pagination={pagination}
-          handleNextPage={handleNextPage}
-          currentPage={params.page}
-          list={list}
-        />
+        {loading ? (
+          <p>Loading...</p>
+        ) : list.length ? (
+          <List
+            pagination={pagination}
+            handleNextPage={handleNextPage}
+            currentPage={params.page}
+            list={list}
+          />
+        ) : (
+          <p>Sorry, there are no results.</p>
+        )}
       </main>
       <Footer />
     </div>

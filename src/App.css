@@ -1,12 +1,16 @@
 html,
-body {
-  height: 100%;
+body,
+#root {
+  height: 100vh;
 }
 
 .App {
   text-align: center;
   height: 100%;
   background-color: rgb(35, 33, 33);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -16,17 +20,24 @@ a {
 
 header {
   display: flex;
-  justify-content: space-between;
   background-color: orange;
   height: 50px;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   max-width: 1200px;
-  margin: auto;
+  height: 100%;
+  background-color: rgb(255, 255, 240);
+}
+
+footer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 80px;
 }
 
 /* header classes */
@@ -286,16 +297,6 @@ main {
 }
 
 /* Footer */
-footer {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  height: 80px;
-}
-
 footer a {
   color: white;
   font-size: 12px;
